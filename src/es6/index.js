@@ -65,3 +65,42 @@ const helloPromesi = ()=>{
 helloPromesi()
     .then(response=>console.log(response))
     .catch(error=>console.log(error))
+
+class calculator{
+    constructor(){
+        this.valueA=0;
+        this.valieB=0;
+    }
+    suma(valueA,valueB){
+        this.valueA=valueA;
+        this.valieB=valueB;
+        return this.valueA+this.valieB;
+    }
+}
+
+const calc=new calculator();
+console.log(calc.suma(5,5));
+
+//generadores
+
+function* fibonacci() {
+    let nun =0;
+    yield nun;
+    let nun2=1;
+    yield nun2;
+    let nun3;
+    let i=0;
+    while(i<100){
+        nun3=nun+nun2;
+        yield nun3
+        nun=nun2
+        nun2=nun3
+        i++;
+    }
+  }
+
+  var it = fibonacci();
+  for (let x=0; x<100;x++){
+    console.log(it.next().value)
+  }
+  
